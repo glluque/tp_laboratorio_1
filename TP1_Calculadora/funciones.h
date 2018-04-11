@@ -1,51 +1,50 @@
 #ifndef FUNCIONES_H_INCLUDED
 #define FUNCIONES_H_INCLUDED
 
-/** \brief
+/** \brief Suma dos flotantes
  *
- * \param
- * \param
- * \return
+ * \param Primer flotante a sumar
+ * \param Segundo flotante a sumar
+ * \return La suma de los dos flotantes
  *
  */
 
 float suma(float, float );
 
-/** \brief
+/** \brief Resta dos flotantes
  *
- * \param
- * \param
- * \return
+ * \param Primer flotante a restar
+ * \param Segundo flotante que restara al primero
+ * \return Resultado de la resta de flotantes
  *
  */
 
 float resta(float, float);
 
-/** \brief
+/** \brief Multiplica dos flotantes recibidos
  *
- * \param
- * \param
- * \return
+ * \param Primer flotante a multiplicar
+ * \param Segundo flotante, multipica al primero
+ * \return Resultado de la multiplicacion
  *
  */
 
 float producto(float, float);
 
-/** \brief
+/** \brief Divide dos flotantes recibidos
  *
- * \param
- * \param
- * \return
+ * \param Primer flotante a dividir
+ * \param Segundo flotante, divide al primero
+ * \return Resultado de la division
  *
  */
 
 float division(float, float);
 
-/** \brief
+/** \brief Realiza el factorial del numero recivido
  *
- * \param
- * \param
- * \return
+ * \param Flotante para hacer el factorial
+ * \return Resultado del factorial
  *
  */
 
