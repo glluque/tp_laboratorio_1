@@ -50,11 +50,10 @@ float division(float, float);
 
 float factorial(float);
 
-/** \brief
+/** \brief Pide un flotante por mensaje
  *
- * \param
- * \param
- * \return
+ * \param Mensaje pidiendo el ingreso de un flotante
+ * \return El flotante pedido en el mensaje
  *
  */
 

@@ -45,6 +45,13 @@ int main() //Inicio programa principal
             x = ingresoOperando("Ingresar 1er operando: ");
             y = ingresoOperando("Ingresar 2do operando: ");
             system("cls");
+
+            if (division(x, y) == 0)
+            {
+                printf("\nError, no es posible dividir por 0\nPor favor realice otra operacion\n\n");
+                break;
+            }
+
             printf("El resultado de la division es: %.2f\n\n", division(x, y));
             break;
         case 4://Algoritmo de multiplicacion
@@ -65,7 +72,17 @@ int main() //Inicio programa principal
             printf("El resultado de todas las operaciones son:\n\n");
             printf("Sumas: %.2f\n", suma(x, y));
             printf("Resta: %.2f\n", resta(x, y));
-            printf("Division: %.2f\n", division(x, y));
+
+
+            if (division(x, y) == 0)
+            {
+                printf("Division: Error, no es posible dividir por 0\n");
+            }
+            else
+            {
+                printf("Division: %.2f\n", division(x, y));
+            }
+
             printf("Multiplicacion: %.2f\n", producto(x, y));
             printf("Factorial: %.2f\n\n", factorial(x));
             break;

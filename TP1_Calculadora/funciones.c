@@ -37,7 +37,7 @@ float division(float x, float y)
     }
     else
     {
-        printf("\nError, no es posible dividir por 0\n");
+        division = 0;
     }
     return division;
 }
@@ -58,7 +58,7 @@ float ingresoOperando (char mensaje [])
 {
     float operador;
 
-    printf("%s" ,mensaje);
+    printf("%s",mensaje);
     scanf("%f", &operador);
 
     return operador;
