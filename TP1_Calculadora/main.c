@@ -30,50 +30,39 @@ int main() //Inicio programa principal
         switch(opcion) //Inicio interacion
         {
         case 1://Algoritmo de suma
-            printf("Ingresar 1er operando: ");
-            scanf("%f", &x);
-            printf("Ingresar 2do operando: ");
-            scanf("%f", &y);
+            x = ingresoOperando("Ingresar 1er operando: ");
+            y = ingresoOperando("Ingresar 2do operando: ");
             system("cls");
             printf("El resultado de la suma es: %.2f\n\n", suma(x, y));
             break;
         case 2://Algoritmo de resta
-            printf("Ingresar 1er operando: ");
-            scanf("%f", &x);
-            printf("Ingresar 2do operando: ");
-            scanf("%f", &y);
+            x = ingresoOperando("Ingresar 1er operando: ");
+            y = ingresoOperando("Ingresar 2do operando: ");
             system("cls");
             printf("El resultado de la resta es: %.2f\n\n", resta(x, y));
             break;
         case 3://Algoritmo de division
-            printf("Ingresar 1er operando: ");
-            scanf("%f", &x);
-            printf("Ingresar 2do operando: ");
-            scanf("%f", &y);
+            x = ingresoOperando("Ingresar 1er operando: ");
+            y = ingresoOperando("Ingresar 2do operando: ");
             system("cls");
             printf("El resultado de la division es: %.2f\n\n", division(x, y));
             break;
         case 4://Algoritmo de multiplicacion
-            printf("Ingresar 1er operando: ");
-            scanf("%f", &x);
-            printf("Ingresar 2do operando: ");
-            scanf("%f", &y);
+            x = ingresoOperando("Ingresar 1er operando: ");
+            y = ingresoOperando("Ingresar 2do operando: ");
             system("cls");
             printf("El resultado de la multiplicacion es: %.2f\n\n", producto(x, y));
             break;
         case 5://Algoritmo de de factorial
-            printf("Ingresar 1er operando: ");
-            scanf("%f", &x);
+            x = ingresoOperando("Ingresar 1er operando: ");
             system("cls");
             printf("El resultado del factorial es: %.2f\n\n", factorial(x));
             break;
         case 6://Algoritmo de todas las operaciones
-            printf("Ingresar 1er operando: ");
-            scanf("%f", &x);
-            printf("Ingresar 2do operando: ");
-            scanf("%f", &y);
+            x = ingresoOperando("Ingresar 1er operando: ");
+            y = ingresoOperando("Ingresar 2do operando: ");
             system("cls");
-            printf("El resultado de todas las operaciones son:\n");
+            printf("El resultado de todas las operaciones son:\n\n");
             printf("Sumas: %.2f\n", suma(x, y));
             printf("Resta: %.2f\n", resta(x, y));
             printf("Division: %.2f\n", division(x, y));
@@ -81,6 +70,7 @@ int main() //Inicio programa principal
             printf("Factorial: %.2f\n\n", factorial(x));
             break;
         case 7://Algoritmo de salida interacion
+            printf("Presione cualquier tecla para finalizar\n\n\n");
             seguir = 'n';
             break;
         }//Fin interacion

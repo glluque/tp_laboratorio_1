@@ -50,4 +50,14 @@ float division(float, float);
 
 float factorial(float);
 
+/** \brief
+ *
+ * \param
+ * \param
+ * \return
+ *
+ */
+
+float ingresoOperando (char []);
+
 #endif // FUNCIONES_H_INCLUDED
