@@ -41,7 +41,7 @@ float producto(float, float);
 
 float division(float, float);
 
-/** \brief Realiza el factorial del numero recivido
+/** \brief Realiza el factorial del numero recibido
  *
  * \param Flotante para hacer el factorial
  * \return Resultado del factorial
