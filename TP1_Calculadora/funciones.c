@@ -37,7 +37,7 @@ float division(float x, float y)
     }
     else
     {
-        division = 0;
+        division = 0.00001;
     }
     return division;
 }
