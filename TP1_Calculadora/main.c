@@ -46,7 +46,7 @@ int main() //Inicio programa principal
             y = ingresoOperando("Ingresar 2do operando: ");
             system("cls");
 
-            if (division(x, y) == 0.00001)
+            if (y == 0)
             {
                 printf("\nError, no es posible dividir por 0\nPor favor realice otra operacion\n\n");
                 break;
@@ -74,7 +74,7 @@ int main() //Inicio programa principal
             printf("Resta: %.2f\n", resta(x, y));
 
 
-            if (division(x, y) == 0.01)
+            if (y == 0)
             {
                 printf("Division: Error, no es posible dividir por 0\n");
             }

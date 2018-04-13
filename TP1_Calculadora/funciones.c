@@ -31,14 +31,9 @@ float producto(float x, float y)
 float division(float x, float y)
 {
     float division;
-    if(y != 0)
-    {
-        division=x/y;
-    }
-    else
-    {
-        division = 0.00001;
-    }
+
+    division=x/y;
+
     return division;
 }
 
