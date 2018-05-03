@@ -67,7 +67,6 @@ void altaEmpleado(eEmpleado vec[], int tamEmp)
     int indice;
     int esta;
     int legajo;
-    //int auxInt;
     char apellido[50];
     char nombre[25];
 
@@ -83,8 +82,6 @@ void altaEmpleado(eEmpleado vec[], int tamEmp)
     else
     {
         legajo = getValidInt("Ingrese DNI: ", "Error, DNI no valido. ", 1, 99999999);
-        /*printf("Ingrese DNI: ");
-        scanf("%d", &legajo);*/
 
         esta = buscarEmpleado(vec, tamEmp, legajo);
 
@@ -131,8 +128,6 @@ void bajaEmpleado(eEmpleado vec[], int tam)
 
 
     legajo = getValidInt("Ingrese DNI: ", "Error, DNI no valido. ", 1, 99999999);
-    /*printf("Ingrese legajo: ");
-    scanf("%d", &legajo);*/
 
     esta = buscarEmpleado(vec, tam, legajo);
 
@@ -150,7 +145,7 @@ void bajaEmpleado(eEmpleado vec[], int tam)
         fflush(stdin);
         scanf("%c", &confirma);
 
-        if(confirma == 's')
+        if(confirma == 's'&& confirma == 'S')
         {
             vec[esta].estado = 1;
             printf("\nSe ha realizado la baja\n\n");
@@ -192,10 +187,10 @@ void ordenarEmpleados(eEmpleado vec[], int tam)
                 }
 
             }
-            printf("\nSistema Ordenado\n\n");
         }
     }
 
+    printf("\nSistema Ordenado\n\n");
     system("pause");
 }
 
@@ -342,22 +337,22 @@ void mostrarEmpleados(eEmpleado vec[], int tamEmp)
 {
     system("cls");
     printf("      ---Lista de Empleados---\n\n");
-    printf("  DNI  Nombre   Sexo   \n\n");
+    printf("   DNI\t\tNombre\t\tEdad   \n\n");
     for(int i=0; i< tamEmp; i++)
     {
         if(vec[i].estado == 0)
         {
-            //printf("%8d%30s%4d\n", vec[i].dni, vec[i].nombre, vec[i].edad);
             mostrarEmpleado(vec[i]);
         }
     }
 
+    printf("\n\n");
     system("pause");
 }
 
 void mostrarEmpleado(eEmpleado emp)
 {
-    printf("%8d%30s%4d\n", emp.dni, emp.nombre, emp.edad);
+    printf("%8d%20s%3d\n", emp.dni, emp.nombre, emp.edad);
 }
 
 void graficarEmpleados(eEmpleado persona[], int tam)
