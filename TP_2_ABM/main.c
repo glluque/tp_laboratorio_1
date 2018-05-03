@@ -18,9 +18,9 @@
 
 int main()
 {
-    char seguir='s';
+    int salir = 0;
 
-    ePersona equipo[TAM];
+    eEmpleado equipo[TAM];
 
     inicializarArrar(equipo, TAM);
 
@@ -46,9 +46,12 @@ int main()
             seguir = 'n';
             printf("\n\n**Saliendo del programa**\nPresione cualquier tecla para finalizar.\n\n");
             break;
+        default:
+            printf("\nOpcion Incorrecta\n\n");
+            system("pause");
         }
     }
-    while(seguir=='s');
+    while(salir != 1));
 
     return 0;
 }

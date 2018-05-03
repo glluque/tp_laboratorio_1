@@ -31,6 +31,10 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="abm.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="abm.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

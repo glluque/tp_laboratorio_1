@@ -8,7 +8,17 @@ typedef struct
     unsigned int edad;
     int estado;
 
-}ePersona;
+}eEmpleado;
+
+void inicializarEmpleados(eEmpleado[], int);
+void mostrarEmpleados(eEmpleado [], int);
+void mostrarEmpleado(eEmpleado, int);
+int buscarLibre(eEmpleado[], int);
+int buscarEmpleado(eEmpleado[], int, int);
+void bajaEmpleado(eEmpleado[], int);
+void altaEmpleado(eEmpleado[], int);
+void ordenarEmpleados(eEmpleado[], int);
+char nombreCompleto (char[], char[]);
 
 
 /**
