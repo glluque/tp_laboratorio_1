@@ -10,15 +10,105 @@ typedef struct
 
 }eEmpleado;
 
+/** \brief
+ *
+ * \param
+ * \param
+ * \return
+ *
+ */
+
+int menu();
+/** \brief
+ *
+ * \param
+ * \param
+ * \return
+ *
+ */
+
 void inicializarEmpleados(eEmpleado[], int);
+/** \brief
+ *
+ * \param
+ * \param
+ * \return
+ *
+ */
+
 void mostrarEmpleados(eEmpleado [], int);
-void mostrarEmpleado(eEmpleado, int);
+/** \brief
+ *
+ * \param
+ * \param
+ * \return
+ *
+ */
+
+void mostrarEmpleado(eEmpleado);
+/** \brief
+ *
+ * \param
+ * \param
+ * \return
+ *
+ */
+
 int buscarLibre(eEmpleado[], int);
+/** \brief
+ *
+ * \param
+ * \param
+ * \return
+ *
+ */
+
 int buscarEmpleado(eEmpleado[], int, int);
+/** \brief
+ *
+ * \param
+ * \param
+ * \return
+ *
+ */
+
 void bajaEmpleado(eEmpleado[], int);
+/** \brief
+ *
+ * \param
+ * \param
+ * \return
+ *
+ */
+
 void altaEmpleado(eEmpleado[], int);
+/** \brief
+ *
+ * \param
+ * \param
+ * \return
+ *
+ */
+
 void ordenarEmpleados(eEmpleado[], int);
-char nombreCompleto (char[], char[]);
+/** \brief
+ *
+ * \param
+ * \param
+ * \return
+ *
+ */
+
+char nombreCompleto(char[], char[]);
+/** \brief
+ *
+ * \param
+ * \param
+ * \return
+ *
+ */
+
+void graficarEmpleados(eEmpleado[], int);
 
 
 /**

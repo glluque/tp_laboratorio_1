@@ -22,7 +22,7 @@ int main()
 
     eEmpleado equipo[TAM];
 
-    inicializarArrar(equipo, TAM);
+    inicializarEmpleados(equipo, TAM);
 
     do
     {
@@ -31,27 +31,29 @@ int main()
         {
         case 1:
             //system("cls");
-            altaPersona(equipo, TAM);
+            altaEmpleado(equipo, TAM);
             break;
         case 2:
-            bajarPersona(equipo, TAM);
+            bajaEmpleado(equipo, TAM);
             break;
         case 3:
-            mostrarPersonas(equipo, TAM);
+            ordenarEmpleados(equipo, TAM);
             break;
         case 4:
-            graficarPersonas(equipo, TAM);
+            mostrarEmpleados(equipo, TAM);
             break;
         case 5:
-            seguir = 'n';
+            graficarEmpleados(equipo, TAM);
+            break;
+        case 6:
+            salir = 1;
             printf("\n\n**Saliendo del programa**\nPresione cualquier tecla para finalizar.\n\n");
             break;
         default:
             printf("\nOpcion Incorrecta\n\n");
             system("pause");
         }
-    }
-    while(salir != 1));
+    }while(salir != 1);
 
     return 0;
 }

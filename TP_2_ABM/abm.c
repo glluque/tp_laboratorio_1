@@ -1,13 +1,34 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
 #include "abm.h"
+
+int menu()
+{
+    int opcion;
+
+    system("cls");
+    printf("      ---ABM Empleados---\n\n");
+    printf("1- Alta\n");
+    printf("2- Baja\n");
+    printf("3- Ordenar\n");
+    printf("4- Listar\n");
+    printf("5- Graficar por edades\n");
+    printf("6-Salir\n");
+
+    printf("\nIndique opcion: ");
+    scanf("%d", &opcion);
+
+    return opcion;
+}
 
 void inicializarEmpleados(eEmpleado vec[], int tam)
 {
 
     for(int i=0; i< tam; i++)
     {
-        vec[i].isEmpty =1;
+        vec[i].estado =1;
     }
 }
 
@@ -16,7 +37,7 @@ int buscarLibre(eEmpleado vec[], int tam)
     int indice = -1;
     for(int i=0; i < tam; i++)
     {
-        if(vec[i].isEmpty == 1)
+        if(vec[i].estado == 1)
         {
             indice = i;
             break;
@@ -30,7 +51,7 @@ int buscarEmpleado(eEmpleado vec[], int tam, int legajo)
     int indice = -1;
     for(int i=0; i < tam; i++)
     {
-        if(vec[i].isEmpty == 0 && vec[i].legajo == legajo)
+        if(vec[i].estado == 0 && vec[i].dni == legajo)
         {
             indice = i;
             break;
@@ -46,9 +67,9 @@ void altaEmpleado(eEmpleado vec[], int tamEmp)
     int indice;
     int esta;
     int legajo;
-    int auxInt;
-    char auxSting[50];
-    char auxString2[25];
+    //int auxInt;
+    char apellido[50];
+    char nombre[25];
 
     system("cls");
     printf("---Alta empleado---\n\n");
@@ -74,16 +95,19 @@ void altaEmpleado(eEmpleado vec[], int tamEmp)
         }
         else
         {
-            nuevoEmpleado.isEmpty = 0;
+            nuevoEmpleado.estado = 0;
             nuevoEmpleado.dni = legajo;
 
-            getStringLetras("Ingrese nombre: ", auxString2);
-            getStringLetras("Ingrese apellido ", auxSting);
+            getStringLetras("Ingrese nombre: ", nombre);
+            getStringLetras("Ingrese apellido ", apellido);
 
-            strcpy(nuevoEmpleado.nombre, nombreCompleto(auxString2, auxSting));
-            /*printf("Ingrese nombre: ");
-            fflush(stdin);
-            gets(nuevoEmpleado.nombre);*/
+            strlwr(nombre);
+            nombre[0]=toupper(nombre[0]);
+
+            strlwr(apellido);
+            apellido[0]=toupper(apellido[0]);
+
+            sprintf( nuevoEmpleado.nombre, "%s, %s", apellido, nombre);
 
             nuevoEmpleado.edad = getValidInt("Ingrese edad: ", "Error, edad no valida. ", 17, 120);
 
@@ -93,7 +117,7 @@ void altaEmpleado(eEmpleado vec[], int tamEmp)
 
         }
     }
-
+    system("pause");
 }
 
 void bajaEmpleado(eEmpleado vec[], int tam)
@@ -128,7 +152,7 @@ void bajaEmpleado(eEmpleado vec[], int tam)
 
         if(confirma == 's')
         {
-            vec[esta].isEmpty = 1;
+            vec[esta].estado = 1;
             printf("\nSe ha realizado la baja\n\n");
         }
         else
@@ -137,6 +161,8 @@ void bajaEmpleado(eEmpleado vec[], int tam)
         }
 
     }
+
+    system("pause");
 }
 
 
@@ -144,24 +170,34 @@ void ordenarEmpleados(eEmpleado vec[], int tam)
 {
 
     eEmpleado auxEmpleado;
-    char auxString[50];
 
-    for(i=0; i<tam-1; i++)
+    for(int i=0; i<tam-1; i++)
     {
-        for(j=i+1; j<tam; j++)
+        for(int j=i+1; j<tam; j++)
         {
-            if(strcmp(auxEmpleado.nombre[i], auxEmpleado.nombre[j])>0)
+            if(strcmp(vec[i].nombre, vec[j].nombre)>0)
             {
-                strcpy(auxString, auxEmpleado.nombre[i]);
-                strcpy(auxEmpleado.nombre[i], auxEmpleado.nombre[j]);
-                strcpy(auxEmpleado.nombre[j], auxString);
+                auxEmpleado = vec[i];
+                vec [i] = vec[j];
+                vec [j] = auxEmpleado;
+            }
+            else if(strcmp(vec[i].nombre, vec[j].nombre) == 0)
+            {
+
+                if(vec[i].edad > vec[j].edad)
+                {
+                    auxEmpleado = vec[i];
+                    vec [i] = vec[j];
+                    vec [j] = auxEmpleado;
+                }
 
             }
+            printf("\nSistema Ordenado\n\n");
+        }
     }
-    printf("\nSistema Ordenado\n\n");
+
+    system("pause");
 }
-
-
 
 float getFloat(char mensaje[])
 {
@@ -300,19 +336,103 @@ int esNumericoFlotante(char str[])
     return 1;
 }
 
-char nombreCompleto (char nombre[], char apellido[])
+
+
+void mostrarEmpleados(eEmpleado vec[], int tamEmp)
 {
-    char apeNom[50]; //suma los char con la coma y el espacio
+    system("cls");
+    printf("      ---Lista de Empleados---\n\n");
+    printf("  DNI  Nombre   Sexo   \n\n");
+    for(int i=0; i< tamEmp; i++)
+    {
+        if(vec[i].estado == 0)
+        {
+            //printf("%8d%30s%4d\n", vec[i].dni, vec[i].nombre, vec[i].edad);
+            mostrarEmpleado(vec[i]);
+        }
+    }
 
-    strlwr(nombre);
-    nombre[0]=toupper(nombre[0]);
+    system("pause");
+}
 
-    strlwr(apellido);
-    apellido[0]=toupper(apellido[0]);
+void mostrarEmpleado(eEmpleado emp)
+{
+    printf("%8d%30s%4d\n", emp.dni, emp.nombre, emp.edad);
+}
 
-    strcpy(apeNom, apellido);
-    strcat(apeNom, ", ");
-    strcat(apeNom, nombre);
+void graficarEmpleados(eEmpleado persona[], int tam)
+{
+    int i;
+    int cont18 = 0;
+    int cont19a35 = 0;
+    int cont35 = 0;
+    int flag=0;
+    int mayor;
 
-    return apeNom;
+
+    for(i=0; i < tam; i++)
+    {
+        if(persona[i].estado == 1)
+        {
+            if(persona[i].edad < 19)
+            {
+                cont18++;
+            }
+            else
+            {
+                if(persona[i].edad > 18 && persona[i].edad < 36)
+                {
+                    cont19a35++;
+                }
+                else
+                {
+                    cont35++;
+                }
+            }
+        }
+    }
+
+    if(cont18 >= cont19a35 && cont18 >= cont35)
+    {
+        mayor = cont18;
+    }
+    else
+    {
+        if(cont19a35 >= cont18 && cont19a35 >= cont35)
+        {
+            mayor = cont19a35;
+        }
+        else
+        {
+            mayor = cont35;
+        }
+    }
+
+    for(i=mayor; i>0; i--)
+    {
+
+        if(i <= cont18)
+        {
+            printf("*");
+        }
+
+        if(i <= cont19a35)
+        {
+            flag=1;
+            printf("\t*");
+        }
+
+        if(i<= cont35)
+        {
+            if(flag==0)
+                printf("\t\t*");
+            if(flag==1)
+                printf("\t*");
+        }
+
+        printf("\n");
+    }
+
+    printf("<18\t19-35\t>35\n");
+    system("pause");
 }
