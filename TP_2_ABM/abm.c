@@ -145,7 +145,7 @@ void bajaEmpleado(eEmpleado vec[], int tam)
         fflush(stdin);
         scanf("%c", &confirma);
 
-        if(confirma == 's'&& confirma == 'S')
+        if(confirma == 's'|| confirma == 'S')
         {
             vec[esta].estado = 1;
             printf("\nSe ha realizado la baja\n\n");
@@ -165,6 +165,8 @@ void ordenarEmpleados(eEmpleado vec[], int tam)
 {
 
     eEmpleado auxEmpleado;
+
+    system("cls");
 
     for(int i=0; i<tam-1; i++)
     {
@@ -337,7 +339,7 @@ void mostrarEmpleados(eEmpleado vec[], int tamEmp)
 {
     system("cls");
     printf("      ---Lista de Empleados---\n\n");
-    printf("   DNI\t\tNombre\t\tEdad   \n\n");
+    printf("   DNI\t\tNombre\t\t  Edad   \n\n");
     for(int i=0; i< tamEmp; i++)
     {
         if(vec[i].estado == 0)
@@ -352,82 +354,73 @@ void mostrarEmpleados(eEmpleado vec[], int tamEmp)
 
 void mostrarEmpleado(eEmpleado emp)
 {
-    printf("%8d%20s%3d\n", emp.dni, emp.nombre, emp.edad);
+    printf("%8d%20s\t%3d\n", emp.dni, emp.nombre, emp.edad);
 }
 
 void graficarEmpleados(eEmpleado persona[], int tam)
 {
-    int i;
-    int cont18 = 0;
-    int cont19a35 = 0;
-    int cont35 = 0;
-    int flag=0;
-    int mayor;
+    system("cls");
 
+    int i, j, hasta18=0, de19a35=0, mayorDe35=0, bandera=0, mayor;
 
-    for(i=0; i < tam; i++)
+    for(j=0; j<tam; j++)
     {
-        if(persona[i].estado == 1)
+        if(persona[j].edad<18 && persona[j].edad>0)
         {
-            if(persona[i].edad < 19)
-            {
-                cont18++;
-            }
-            else
-            {
-                if(persona[i].edad > 18 && persona[i].edad < 36)
-                {
-                    cont19a35++;
-                }
-                else
-                {
-                    cont35++;
-                }
-            }
+            hasta18++;
+
+        }
+        else if(persona[j].edad>35)
+        {
+            mayorDe35++;
+        }
+        else if( persona[j].edad > hasta18)
+        {
+            de19a35++;
         }
     }
 
-    if(cont18 >= cont19a35 && cont18 >= cont35)
+    if(hasta18 >= de19a35 && hasta18 >= mayorDe35)
     {
-        mayor = cont18;
+        mayor = hasta18;
     }
     else
     {
-        if(cont19a35 >= cont18 && cont19a35 >= cont35)
+        if(de19a35 >= hasta18 && de19a35 >= mayorDe35)
         {
-            mayor = cont19a35;
+            mayor = de19a35;
         }
         else
         {
-            mayor = cont35;
+            mayor = mayorDe35;
         }
     }
+
+    printf("\n\n");
 
     for(i=mayor; i>0; i--)
     {
-
-        if(i <= cont18)
+        if(i<= hasta18)
         {
             printf("*");
         }
-
-        if(i <= cont19a35)
+        if(i<= de19a35)
         {
-            flag=1;
+            bandera=1;
             printf("\t*");
         }
-
-        if(i<= cont35)
+        if(i<= mayorDe35)
         {
-            if(flag==0)
+            if(bandera==0)
                 printf("\t\t*");
-            if(flag==1)
+            if(bandera==1)
                 printf("\t*");
-        }
 
+        }
         printf("\n");
     }
-
-    printf("<18\t19-35\t>35\n");
+    printf("-------------------");
+    printf("\n  <18\t19-35\t>35");
+    printf("\n\n");
     system("pause");
 }
