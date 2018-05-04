@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "abm.h"
-#define TAM 3
+#define TAM 20
 
 /*
 *
-* Trabajo practico N°2 de Laboratorio 1 UTN FRA
+* Trabajo practico NÂ°2 de Laboratorio 1 UTN FRA
 *
 * Objetivo: AMB, Usuario puede dar de alta y baja nombres, apellidos y numero de DNI.
 * Devuelve un tabla con los datos y un grafico con las edades.
