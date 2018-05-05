@@ -20,9 +20,9 @@ int main()
 {
     int salir = 0;
 
-    eEmpleado equipo[TAM];
+    ePersona newPersona[TAM];
 
-    inicializarEmpleados(equipo, TAM);
+    inicializarPersona(newPersona, TAM);
 
     do
     {
@@ -30,20 +30,19 @@ int main()
         switch(menu())
         {
         case 1:
-            //system("cls");
-            altaEmpleado(equipo, TAM);
+            altaPersona(newPersona, TAM);
             break;
         case 2:
-            bajaEmpleado(equipo, TAM);
+            bajaPersona(newPersona, TAM);
             break;
         case 3:
-            ordenarEmpleados(equipo, TAM);
+            ordenarPersona(newPersona, TAM);
             break;
         case 4:
-            mostrarEmpleados(equipo, TAM);
+            mostrarPersonas(newPersona, TAM);
             break;
         case 5:
-            graficarEmpleados(equipo, TAM);
+            graficarPersona(newPersona, TAM);
             break;
         case 6:
             salir = 1;

@@ -8,107 +8,107 @@ typedef struct
     unsigned int edad;
     int estado;
 
-}eEmpleado;
+}ePersona;
 
-/** \brief
+/** \brief Menu de opcione a elegir
  *
- * \param
- * \param
- * \return
+ * \return El numero de la opcion elegida
  *
  */
 
 int menu();
-/** \brief
+/** \brief Inicia el array de estructura ePersona en 1 al estado
  *
- * \param
- * \param
- * \return
- *
- */
-
-void inicializarEmpleados(eEmpleado[], int);
-/** \brief
- *
- * \param
- * \param
- * \return
+ * \param El array a recorrer e inicializar
+ * \param El tamanio del array
  *
  */
 
-void mostrarEmpleados(eEmpleado [], int);
-/** \brief
+void inicializarPersona(ePersona[], int);
+
+/** \brief Muestra en una tabla la informacion de los empleados con estado en 0
  *
- * \param
- * \param
- * \return
+ * \param El array con la informacion a mostrar
+ * \param El tamanio del array
  *
  */
 
-void mostrarEmpleado(eEmpleado);
-/** \brief
+void mostrarPersonas(ePersona [], int);
+
+/** \brief Muestra los datos de una persona con el estado en 0
  *
- * \param
- * \param
- * \return
+ * \param El array con la informacion a mostrar
  *
  */
 
-int buscarLibre(eEmpleado[], int);
-/** \brief
+void mostrarPersona(ePersona);
+
+/** \brief Busca un lugar libre en el array de estructura
  *
- * \param
- * \param
- * \return
+ * \param La estructura donde buscar
+ * \param El tamanio de la estructura
+ * \return Devuelve un entero con el subindice del lugar libre y -1 si no hay lugar
  *
  */
 
-int buscarEmpleado(eEmpleado[], int, int);
-/** \brief
+int buscarLibre(ePersona[], int);
+
+/** \brief Busca a una persona dentro de la base de datos por su DNI
  *
- * \param
- * \param
- * \return
+ * \param El array de estructuras con los datos
+ * \param El tamanio del array
+ * \param El DNI de la persona a buscar
+ * \return Devuelve un entero con el subindice del lugar si existe y -1 si no existe
  *
  */
 
-void bajaEmpleado(eEmpleado[], int);
-/** \brief
+int buscarPersona(ePersona[], int, int);
+
+/** \brief Elimina una persona de la base de datos colocando su estando en 1
  *
- * \param
- * \param
- * \return
+ * \param El array de estructuras con los datos
+ * \param El tamanio del array
  *
  */
 
-void altaEmpleado(eEmpleado[], int);
-/** \brief
+void bajaPersona(ePersona[], int);
+
+/** \brief Da de alta un persona poniendo su estado en 0 y pide ingresar sus datos
  *
- * \param
- * \param
- * \return
+ * \param El array de estructuras con los datos
+ * \param El tamanio del array
  *
  */
 
-void ordenarEmpleados(eEmpleado[], int);
-/** \brief
+void altaPersona(ePersona[], int);
+
+/** \brief Ordena por orden alfabetico los apellido de las personas y tambien por edad
  *
- * \param
- * \param
- * \return
+ * \param El array de estructuras con los datos
+ * \param El tamanio del array
+ *
+ */
+
+void ordenarPersona(ePersona[], int);
+
+/** \brief Concatena apellido y nombre
+ *
+ * \param apellido a concatenar
+ * \param nombre a concatenar con apellido
+ * \return apellido y nombre concatenados en un solo string y con sus mayusculas
  *
  */
 
 char nombreCompleto(char[], char[]);
-/** \brief
+
+/** \brief Realiza un grafico de barras con las edades de las personas
  *
- * \param
- * \param
- * \return
+ * \param El array de estructuras con los datos
+ * \param El tamanio del array
  *
  */
 
-void graficarEmpleados(eEmpleado[], int);
+void graficarPersona(ePersona[], int);
 
 
 /**

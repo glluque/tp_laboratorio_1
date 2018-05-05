@@ -27,3 +27,17 @@
 	<stdlib.h>
 	"abm.h"
 
+1525546702 source:c:\users\glluq\desktop\tp_laboratorio_1-master\tp_2_abm\abm.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"abm.h"
+
+1525549004 c:\users\glluq\desktop\tp_laboratorio_1-master\tp_2_abm\abm.h
+
+1525546945 source:c:\users\glluq\desktop\tp_laboratorio_1-master\tp_2_abm\main.c
+	<stdio.h>
+	<stdlib.h>
+	"abm.h"
+
