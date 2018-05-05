@@ -95,8 +95,7 @@ void altaPersona(ePersona vec[], int tam)
         }
         else
         {
-            nuevaPersona
-            .estado = 0;
+            nuevaPersona.estado = 0;
             nuevaPersona.dni = dni;
 
             getStringLetras("Ingrese nombre: ", nombre);
