@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1508521762 source:c:\users\glluq\desktop\tp3_guillermo_luque\funciones.c
+	<stdlib.h>
+	<stdio.h>
+	<conio.h>
+	<ctype.h>
+	<string.h>
+	<time.h>
+	"funciones.h"
+
+1508521773 c:\users\glluq\desktop\tp3_guillermo_luque\funciones.h
+
+1508522280 source:c:\users\glluq\documents\utn\tp_laboratorio_1-master\tp3_guillermo_luque\funciones.c
+	<stdlib.h>
+	<stdio.h>
+	<conio.h>
+	<ctype.h>
+	<string.h>
+	<time.h>
+	"funciones.h"
+
+1508522280 c:\users\glluq\documents\utn\tp_laboratorio_1-master\tp3_guillermo_luque\funciones.h
+
